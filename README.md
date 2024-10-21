@@ -4,18 +4,18 @@
 # SPDX-License-Identifier: Apache-2.0
 -->
 
-# Compute operations
+# Cloud compute operations
 
 [![REUSE status](https://api.reuse.software/badge/github.com/cobaltcore-dev/cloud-storage-operations)](https://api.reuse.software/info/github.com/cobaltcore-dev/cloud-storage-operations)
 
-This repository contains packaged resources and configuration related to the operations of the vendor-neutral cloud storage backend within the ApeiroRA project.
+This repository contains packaged resources and configuration related to the operations of the vendor-neutral cloud compute backend within the ApeiroRA project.
 
 # Content
 
 The content is structured as follows:
 
 ```
-compute-operations
+cloud-compute-operations
     │
     └── charts/
          │
