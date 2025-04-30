@@ -1,3 +1,9 @@
+<!--
+# SPDX-FileCopyrightText: Copyright 2024 SAP SE or an SAP affiliate company and cobaltcore-dev contributors
+#
+# SPDX-License-Identifier: Apache-2.0
+-->
+
 # KVM-Operations
 
 This Helm chart packages resources and configuration for KVM operations.
