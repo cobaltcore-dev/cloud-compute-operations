@@ -1,0 +1,90 @@
+# SPDX-FileCopyrightText: 2024 SAP SE or an SAP affiliate company and Greenhouse contributors
+# SPDX-License-Identifier: Apache-2.0
+
+global:
+  ## Common labels to add to all resources
+  ##
+  commonLabels: {}
+
+## Default rules for monitoring the cloud storage clusters
+##
+prometheusRules:
+  ## Enables PrometheusRule resources to be created
+  create: true
+
+  ## PrometheusRule groups to be created
+  ruleGroups:
+    domainHealth: true
+    generic: true
+    healthChecks: true
+    manager: false
+    mon: true
+    nodes: true
+    osd: true
+    pgr: true
+    pools: true
+    rados: true
+    customrules: true
+    absentMetrics: true
+
+  ## Disables specific PrometheusRule alerts
+  disabled:
+    CephNodeInconsistentMTU: true
+    CephAPodNodePGImbalance: true
+    CephStorageNodePGImbalance: true
+
+  ## Label selectors for the Prometheus rules to be picked up by Prometheus.
+  ruleSelectors:
+    # - name: plugin
+    #   value: kube-monitoring
+    # - name: prometheus
+    #   value: kubernetes
+
+  ## Labels for PrometheusRules
+  labels: {}
+
+  ## Annotations for PrometheusRules
+  annotations: {}
+
+  ## Additional labels for PrometheusRule alerts
+  ## This is useful for adding additional labels such as "support_group" or "service" for the routing of alerts to each rule
+  additionalRuleLabels:
+    support_group: compute
+    service: kvm
+
+  ## Additional annotations for PrometheusRule alerts
+  additionalRuleAnnotations: {}
+
+## Create default plutono dashboards for monitoring the cluster
+##
+dashboards:
+  ## Enables ConfigMap resources with dashboards to be created
+  create: false
+  ## Label selectors for the Plutono dashboards to be picked up by Plutono.
+  dashboardSelectors:
+    - name: plutono-dashboard
+      value: '"true"'
+
+  global:
+    ## Enables ConfigMap resources with global dashboards to be created
+    create: false
+
+    ## Label selectors for the global Plutono dashboards to be picked up by the global Plutono.
+    dashboardSelectors:
+      - name: plutono-global
+        value: '"true"'
+
+    ## Label selectors for the global Perses dashboards to be picked up by the global Perses.
+    persesDashboardSelectors:
+      - name: perses.dev/global-resource
+        value: '"true"'
+
+## Create default perses dashboards for monitoring the cluster
+##
+persesDashboards:
+  ## Enables ConfigMap resources with perses dashboards to be created
+  create: false
+  ## Label selectors for the Plutono dashboards to be picked up by Plutono.
+  dashboardSelectors:
+    - name: perses.dev/resource
+      value: '"true"'

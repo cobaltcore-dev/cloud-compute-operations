@@ -1,0 +1,34 @@
+{{- if not .Values.prometheusRules.ruleGroups.domainHealth }}
+groups: []
+{{- else -}}
+groups:
+- name: demo-alert
+  rules:
+{{- if not (.Values.prometheusRules.disabled.LibvirtDomainStealtimeCritial | default false) }}
+  - alert: LibvirtDomainStealtimeCritial
+    expr: kkvm_libvirt_domain_steal_time > 0.02
+    for: 5m
+    labels:
+      severity: critical
+      type: kvm_default
+      inhibited_by: cluster-maintenance
+      {{- include "cloud-storage-operations.additionalRuleLabels" . | nindent 6 }}
+    annotations:
+      description: "The domain expierenced high steal time for more than 5 minutes."
+      summary: "Cluster is in the CRITICAL state"
+{{- end }}
+
+{{- if not (.Values.prometheusRules.disabled.LibvirtDomainStealtimeWarning | default false) }}
+  - alert: LibvirtDomainStealtimeWarning
+    expr: kvm_libvirt_domain_steal_time > 0.01
+    for: 5m
+    labels:
+      severity: warning
+      type: kvm_default
+      inhibited_by: cluster-maintenance
+      {{- include "cloud-storage-operations.additionalRuleLabels" . | nindent 6 }}
+    annotations:
+      description: "The domain expierenced high steal time for more than 5 minutes."
+      summary: "Cluster is in the WARNING state"
+{{- end }}
+{{- end }}
