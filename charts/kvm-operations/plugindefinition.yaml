@@ -7,7 +7,7 @@ kind: PluginDefinition
 metadata:
   name: kvm-operations
 spec:
-  version: 0.0.1
+  version: 0.0.2
   displayName: KVM operations bundle
   description: Operations bundle for the kvm operations backend
   docMarkDownUrl: https://raw.githubusercontent.com/cobaltcore-dev/cloud-compute-operations/main/kvm-operations/README.md
@@ -15,7 +15,7 @@ spec:
   helmChart:
     name: kvm-operations
     repository: oci://ghcr.io/cobaltcore-dev/cloud-compute-operations/charts
-    version: 0.0.1
+    version: 0.0.2
   options:
     - name: prometheusRules.create
       description: Create Prometheus rules

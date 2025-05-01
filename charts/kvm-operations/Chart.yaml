@@ -5,4 +5,4 @@ apiVersion: v2
 name: kvm-operations
 description: kvm operations bundle
 type: application
-version: 0.0.1
+version: 0.0.2
