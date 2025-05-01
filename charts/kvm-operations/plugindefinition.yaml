@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2024 SAP SE or an SAP affiliate company and cobaltcore-dev contributors
+#
+# SPDX-License-Identifier: Apache-2.0
+
+apiVersion: greenhouse.sap/v1alpha1
+kind: PluginDefinition
+metadata:
+  name: kvm-operations
+spec:
+  version: 0.0.1
+  displayName: KVM operations bundle
+  description: Operations bundle for the kvm operations backend
+  docMarkDownUrl: https://raw.githubusercontent.com/cobaltcore-dev/cloud-compute-operations/main/kvm-operations/README.md
+  icon: https://raw.githubusercontent.com/cobaltcore-dev/cloud-compute-operations/main/kvm-operations/kvm-logo.png
+  helmChart:
+    name: kvm-operations
+    repository: oci://ghcr.io/cobaltcore-dev/cloud-compute-operations/charts
+    version: 0.0.1
+  options:
+    - name: prometheusRules.create
+      description: Create Prometheus rules
+      required: false
+      default: true
+      type: bool
+    - name: prometheusRules.ruleSelector
+      description: Selector for Prometheus rules to be picked up by the Prometheus operator. List of key-value pairs.
+      required: false
+      type: list
+    - name: prometheusRules.additionalRuleLabels
+      description: Additional labels to be added every Prometheus rule. E.g support_group, service
+      required: false
+      type: map
+    # Removed due replacement by persesDashboards
+    # - name: dashboards.create
+    #   description: Create Plutono dashboards
+    #   required: false
+    #   default: true
+    #   type: bool
+    # - name: dashboards.global.create
+    #   description: Create global Plutono dashboards
+    #   required: false
+    #   default: false
+    #   type: bool
+    # - name: dashboards.dashboardSelector
+    #   description: Selector for dashboards to be picked up by the Plutono. List of key-value pairs.
+    #   required: false
+    #   type: list
+    # Needs to be created first
+    # - name: persesDashboards.create
+    #   description: Create Perses dashboards
+    #   required: false
+    #   default: true
+    #   type: bool

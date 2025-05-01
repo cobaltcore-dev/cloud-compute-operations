@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: Copyright 2024 SAP SE or an SAP affiliate company and cobaltcore-dev contributors
+#
+# SPDX-License-Identifier: Apache-2.0
+apiVersion: v2
+name: kvm-operations
+description: kvm operations bundle
+type: application
+version: 0.0.1
