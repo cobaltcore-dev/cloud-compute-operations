@@ -6,7 +6,7 @@
 
 # Cloud compute operations
 
-[![REUSE status](https://api.reuse.software/badge/github.com/cobaltcore-dev/cloud-storage-operations)](https://api.reuse.software/info/github.com/cobaltcore-dev/cloud-storage-operations)
+[![REUSE status](https://api.reuse.software/badge/github.com/cobaltcore-dev/cloud-compute-operations)](https://api.reuse.software/info/github.com/cobaltcore-dev/cloud-compute-operations)
 
 This repository contains packaged resources and configuration related to the operations of the vendor-neutral cloud compute backend within the ApeiroRA project.
 
