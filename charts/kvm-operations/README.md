@@ -15,11 +15,11 @@ The content is structured as follows:
 ```
  kvm-operations
     │
-    ├── alerts                      Prometheus alerts for Ceph.
+    ├── alerts                      Prometheus alerts for KVM.
     │
     ├── playbooks                   Playbooks outlining resoluting steps for an individual alert.
     │
-    ├── dashboards                  Plutono dashboards visulizing relevant metrics.
+    ├── dashboards                  Perses dashboards visulizing relevant metrics.
     │
     ├── Chart.yaml                  Helm chart manifest. Increase the version number when making changes.
     │
