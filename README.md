@@ -8,7 +8,7 @@
 
 [![REUSE status](https://api.reuse.software/badge/github.com/cobaltcore-dev/cloud-compute-operations)](https://api.reuse.software/info/github.com/cobaltcore-dev/cloud-compute-operations)
 
-This repository contains packaged resources and configuration related to the operations of the vendor-neutral cloud compute backend within the ApeiroRA project.
+This repository contains packaged resources and configuration related to the operations of the vendor-neutral cloud compute backend within the [ApeiroRA](https://apeirora.eu) project.
 
 # Content
 
@@ -21,11 +21,11 @@ cloud-compute-operations
          │
          └── kvm-operations
               │
-              ├── aggregations/             Prometheus aggregation rules for kubernetes.
+              ├── aggregations/             Prometheus aggregation rules for compute infrastructure.
               │
-              ├── alerts/                   Prometheus alerts for kubernetes.
+              ├── alerts/                   Prometheus alerts for compute infrastructure.
               │
-              ├── dashboards/               Plutono dashboards for visualizing key metrics.
+              ├── dashboards/               Perses dashboards for visualizing key metrics.
               │
               ├── playbooks/                Step-by-step instructions for troubleshooting.        
               │
