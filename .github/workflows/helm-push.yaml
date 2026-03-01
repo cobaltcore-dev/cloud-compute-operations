@@ -41,7 +41,7 @@ jobs:
 
       - name: Get all changed Chart.yaml files
         id: changed-chart-yaml-files
-        uses: tj-actions/changed-files@v44
+        uses: tj-actions/changed-files@v46
         with:
           files: |
             **/Chart.yaml
